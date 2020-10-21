@@ -6,6 +6,6 @@ before_install:
     - echo "start creating an image with dockerfile"
     - docker build -t hsjeong/docker-react-app -f Dockerfile.dev .
 script:
-    - docker run -e CI=true hsjeong/docker-react-app npm run test
+    - docker run -e CI=true hsjeong/docker-react-app npm run test -- --coverage
 after_success:
     - echo "Test success"
